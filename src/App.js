@@ -1,5 +1,6 @@
 import "./App.css";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { css } from "@emotion/react";
 
 const myTheme = createTheme(
 	{
@@ -17,7 +18,7 @@ const myTheme = createTheme(
 				light: "#e7f5f0",
 				middle: "#e7f5f0",
 				main: "#0095b6",
-				dark: "#001440",
+				dark: "#232b2b",
 			},
 			secondary: {
 				main: "#FF6347",
@@ -32,8 +33,16 @@ const myTheme = createTheme(
 function App() {
 	return (
 		<ThemeProvider theme={myTheme}>
-			<div className="App">
-				<header className="App-header"></header>
+			<div
+				className="root"
+				style={{
+					flexGrow: 1,
+					backgroundColor: `${myTheme.palette.primary.dark}`,
+					minHeight: "100vh",
+				}}
+			>
+				co tam
+				<header className="App-header">hello world</header>
 			</div>
 		</ThemeProvider>
 	);
