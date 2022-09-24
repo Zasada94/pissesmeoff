@@ -8,11 +8,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import SurfingIcon from "@mui/icons-material/Surfing";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -23,16 +21,13 @@ const Header = () => {
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
-
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
-
 	return (
 		<AppBar position="sticky">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
-					<AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 					<Typography
 						variant="h6"
 						noWrap
@@ -41,14 +36,15 @@ const Header = () => {
 						sx={{
 							mr: 2,
 							display: { xs: "none", md: "flex" },
-							fontFamily: "monospace",
+							fontFamily: "Original Surfer",
 							fontWeight: 700,
 							letterSpacing: ".3rem",
 							color: "inherit",
 							textDecoration: "none",
 						}}
 					>
-						LOGO
+						<SurfingIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+						Pisses Me Off
 					</Typography>
 
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -87,7 +83,7 @@ const Header = () => {
 							))}
 						</Menu>
 					</Box>
-					<AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
 					<Typography
 						variant="h5"
 						noWrap
@@ -97,14 +93,15 @@ const Header = () => {
 							mr: 2,
 							display: { xs: "flex", md: "none" },
 							flexGrow: 1,
-							fontFamily: "monospace",
+							fontFamily: "Original Surfer",
 							fontWeight: 700,
 							letterSpacing: ".3rem",
 							color: "inherit",
 							textDecoration: "none",
 						}}
 					>
-						LOGO
+						<SurfingIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+						Pisses Me Off
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
 						{pages.map((page) => (
@@ -116,36 +113,6 @@ const Header = () => {
 								{page}
 							</Button>
 						))}
-					</Box>
-
-					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
-							<IconButton onClick={handleClick} sx={{ p: 0 }}>
-								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-							</IconButton>
-						</Tooltip>
-						<Menu
-							sx={{ mt: "45px" }}
-							id="menu-appbar"
-							anchorEl={anchorEl}
-							anchorOrigin={{
-								vertical: "top",
-								horizontal: "right",
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: "top",
-								horizontal: "right",
-							}}
-							open={Boolean(anchorEl)}
-							onClose={handleClick}
-						>
-							{settings.map((setting) => (
-								<MenuItem key={setting} onClick={handleClick}>
-									<Typography textAlign="center">{setting}</Typography>
-								</MenuItem>
-							))}
-						</Menu>
 					</Box>
 				</Toolbar>
 			</Container>
