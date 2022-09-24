@@ -1,6 +1,6 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { css } from "@emotion/react";
+import Header from "./components/Header";
 
 const myTheme = createTheme(
 	{
@@ -42,7 +42,8 @@ function App() {
 				}}
 			>
 				co tam
-				<header className="App-header">hello world</header>
+				<Header />
+				<main>hello world</main>
 			</div>
 		</ThemeProvider>
 	);
