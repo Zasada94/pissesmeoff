@@ -2,7 +2,7 @@ import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
 
-const myTheme = createTheme(
+const theme = createTheme(
 	{
 		values: {
 			sm: "480",
@@ -32,12 +32,12 @@ const myTheme = createTheme(
 
 function App() {
 	return (
-		<ThemeProvider theme={myTheme}>
+		<ThemeProvider theme={theme}>
 			<div
 				className="root"
 				style={{
 					flexGrow: 1,
-					backgroundColor: `${myTheme.palette.primary.dark}`,
+					backgroundColor: theme.palette.primary.dark,
 					minHeight: "100vh",
 				}}
 			>
