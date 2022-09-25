@@ -1,6 +1,8 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
+import Page from "./components/Page";
+
 
 const theme = createTheme(
 	{
@@ -32,19 +34,21 @@ const theme = createTheme(
 
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<div
-				className="root"
-				style={{
-					flexGrow: 1,
-					backgroundColor: theme.palette.primary.dark,
-					minHeight: "100vh",
-				}}
-			>
-				<Header />
-				<main>hello world</main>
-			</div>
-		</ThemeProvider>
+			<ThemeProvider theme={theme}>
+				<div
+					className="root"
+					style={{
+						flexGrow: 1,
+						backgroundColor: theme.palette.primary.dark,
+						minHeight: "100vh",
+					}}
+				>
+					<Header />
+					<main>
+						<Page />
+					</main>
+				</div>
+			</ThemeProvider>
 	);
 }
 

@@ -57,7 +57,6 @@ const Header = () => {
 						<SurfingIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
 						Pisses Me Off
 					</Typography>
-
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 						<IconButton
 							size="large"
@@ -96,7 +95,6 @@ const Header = () => {
 							))}
 						</Menu>
 					</Box>
-
 					<Typography
 						variant="h5"
 						noWrap
