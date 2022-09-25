@@ -1,6 +1,5 @@
-# Surf & Ski & Sail
-
-porównywarka wyjazdowa
+# Pisses me off
+Website for people who want to make anonymous opinions
 
 ## Table of contents
 
