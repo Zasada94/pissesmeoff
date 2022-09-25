@@ -1,7 +1,6 @@
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const myTheme = createTheme(
 	{
@@ -42,15 +41,7 @@ function App() {
 					minHeight: "100vh",
 				}}
 			>
-				co tam
 				<Header />
-				<FontAwesomeIcon
-					icon="fa-solid fa-biohazard"
-					style={{
-						width: "100px",
-						height: "100px",
-					}}
-				/>
 				<main>hello world</main>
 			</div>
 		</ThemeProvider>

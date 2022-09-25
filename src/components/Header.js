@@ -12,12 +12,10 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import SurfingIcon from "@mui/icons-material/Surfing";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["regular", "hot", "favorites", "add post"];
 
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
-	const buttons = ["regular", "hot", "favorites", "add_meme"];
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -25,7 +23,13 @@ const Header = () => {
 		setAnchorEl(null);
 	};
 	return (
-		<AppBar position="sticky">
+		<AppBar
+			position="sticky"
+			sx={{
+				color: "primary.light",
+				backgroundColor: "black",
+			}}
+		>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
@@ -37,10 +41,10 @@ const Header = () => {
 							mr: 2,
 							display: { xs: "none", md: "flex" },
 							fontFamily: "Original Surfer",
-							fontWeight: 700,
-							letterSpacing: ".3rem",
+							letterSpacing: ".2rem",
 							color: "inherit",
 							textDecoration: "none",
+							alignItems: "center",
 						}}
 					>
 						<SurfingIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -71,7 +75,7 @@ const Header = () => {
 								horizontal: "left",
 							}}
 							open={Boolean(anchorEl)}
-							onClose={handleClick}
+							onClose={handleClose}
 							sx={{
 								display: { xs: "block", md: "none" },
 							}}
@@ -95,9 +99,10 @@ const Header = () => {
 							flexGrow: 1,
 							fontFamily: "Original Surfer",
 							fontWeight: 700,
-							letterSpacing: ".3rem",
+							letterSpacing: ".2rem",
 							color: "inherit",
 							textDecoration: "none",
+							alignItems: "center",
 						}}
 					>
 						<SurfingIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
