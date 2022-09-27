@@ -27,11 +27,10 @@ function HomePage() {
 					},
 				}}
 			>
-				Does{" "}
+				Are You pissed off by{" "}
 				<span style={{ color: theme.palette.secondary.light }}>
 					school? work? politics? ex-wife? neighbour? paycheck?{" "}
 				</span>
-				pisses You off?
 			</Typography>
 			<Typography
 				variant="subtitle2"
