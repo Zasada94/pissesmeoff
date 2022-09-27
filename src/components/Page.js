@@ -15,22 +15,19 @@ function Page() {
 	// );
 	return (
 		<Container>
-
-				<Routes>
-					{/* <Route path="/" element={<Navigate to="/regular" replace />}></Route>
+			<Routes>
+				{/* <Route path="/" element={<Navigate to="/regular" replace />}></Route>
 					<Route
 						path="/pissesmeoff"
 						element={<Navigate to="/regular" replace />}
 					></Route> */}
-					{/* <Route path="/regular" element={<PostList array={regular} />}></Route>
-					<Route path="/hot" element={<PostList array={hot} />}></Route>
-					<Route
-						path="/favourites"
-						element={<PostList array={favourites} />}
-					></Route> */}
-					<Route path="/add_post" element={<AddPost />}></Route>
-					{/* <Route path="*" element={<Navigate to="/" replace />}></Route> */}
-				</Routes>		</Container>
+				{/* <Route path="/regular" element={<PostList array={regular} />}></Route>
+					<Route path="/hot" element={<PostList array={hot} />}></Route>*/}
+				<Route path="/favourites" element={<PostList />}></Route>
+				<Route path="/add_post" element={<AddPost />}></Route>
+				{/* <Route path="*" element={<Navigate to="/" replace />}></Route> */}
+			</Routes>
+		</Container>
 	);
 }
 

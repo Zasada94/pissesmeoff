@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +13,7 @@ import Button from "@mui/material/Button";
 import SurfingIcon from "@mui/icons-material/Surfing";
 import { useTheme } from "@mui/material/styles";
 
-const pages = ["regular", "hot", "favorites", "add post"];
+const pages = ["regular", "hot", "favourites", "add_post"];
 
 const Header = () => {
 	const theme = useTheme();
@@ -23,6 +24,7 @@ const Header = () => {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+
 	return (
 		<AppBar
 			position="sticky"
@@ -89,6 +91,8 @@ const Header = () => {
 										px: 3,
 										py: 1,
 									}}
+									component={Link}
+									to={`/${page}`}
 								>
 									{page}
 								</Button>
@@ -125,6 +129,8 @@ const Header = () => {
 									display: "block",
 									lineHeight: 1,
 								}}
+								component={Link}
+								to={`/${page}`}
 							>
 								{page}
 							</Button>
