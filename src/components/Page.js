@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Container from "@mui/material/Container";
 import PostList from "./PostList";
 import AddPost from "./AddPost";
+import HomePage from "./HomePage";
 
 function Page() {
 	// const hot = useSelector((state) => state.posts.hot);
@@ -16,8 +17,8 @@ function Page() {
 	return (
 		<Container>
 			<Routes>
-				{/* <Route path="/" element={<Navigate to="/regular" replace />}></Route>
-					<Route
+				<Route path="/" element={<HomePage />}></Route>
+				{/*<Route
 						path="/pissesmeoff"
 						element={<Navigate to="/regular" replace />}
 					></Route> */}
