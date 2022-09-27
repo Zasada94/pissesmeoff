@@ -1,4 +1,4 @@
-import {Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 
@@ -7,13 +7,12 @@ function HomePage() {
 	return (
 		<Container
 			maxWidth="lg"
-			noWrap
 			sx={{
 				m: 1,
 				display: "flex",
 				flexDirection: "column",
 				alignItems: "center",
-				color: "primary.light",
+				color: theme.palette.primary.light,
 				overflow: "hidden",
 			}}
 		>
@@ -28,9 +27,11 @@ function HomePage() {
 					},
 				}}
 			>
-				Does
-				<span style={{ color: "	#cc3300" }}> school? work? politics? ex-wife? neighbour? paycheck?</span> pisses
-				You off?
+				Does{" "}
+				<span style={{ color: theme.palette.secondary.light }}>
+					school? work? politics? ex-wife? neighbour? paycheck?{" "}
+				</span>
+				pisses You off?
 			</Typography>
 			<Typography
 				variant="subtitle2"
@@ -43,7 +44,9 @@ function HomePage() {
 					},
 				}}
 			>
-				Or maybe just everything enrages You?<span style={{ color: "#cc3300" }}> Share it </span> here, anonymously!
+				Or maybe just everything enrages You?
+				<span style={{ color: theme.palette.secondary.light }}> Share it </span>
+				here, anonymously!
 			</Typography>
 		</Container>
 	);

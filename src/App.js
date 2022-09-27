@@ -3,7 +3,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
 import Page from "./components/Page";
 
-
 const theme = createTheme(
 	{
 		values: {
@@ -24,6 +23,7 @@ const theme = createTheme(
 			},
 			secondary: {
 				main: "#FF6347",
+				light: "#cc3300",
 			},
 		},
 		typography: {
@@ -34,21 +34,21 @@ const theme = createTheme(
 
 function App() {
 	return (
-			<ThemeProvider theme={theme}>
-				<div
-					className="root"
-					style={{
-						flexGrow: 1,
-						backgroundColor: theme.palette.primary.dark,
-						minHeight: "100vh",
-					}}
-				>
-					<Header />
-					<main>
-						<Page />
-					</main>
-				</div>
-			</ThemeProvider>
+		<ThemeProvider theme={theme}>
+			<div
+				className="root"
+				style={{
+					flexGrow: 1,
+					backgroundColor: theme.palette.primary.dark,
+					minHeight: "100vh",
+				}}
+			>
+				<Header />
+				<main>
+					<Page />
+				</main>
+			</div>
+		</ThemeProvider>
 	);
 }
 
