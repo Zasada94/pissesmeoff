@@ -18,10 +18,7 @@ function Page() {
 		<Container>
 			<Routes>
 				<Route path="/" element={<HomePage />}></Route>
-				{/*<Route
-						path="/pissesmeoff"
-						element={<Navigate to="/regular" replace />}
-					></Route> */}
+				<Route path="/pissesmeoff" element={<HomePage />}></Route>
 				{/* <Route path="/regular" element={<PostList array={regular} />}></Route>
 					<Route path="/hot" element={<PostList array={hot} />}></Route>*/}
 				<Route path="/favourites" element={<PostList />}></Route>
