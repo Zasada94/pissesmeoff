@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
@@ -34,21 +35,21 @@ const theme = createTheme(
 
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<div
-				className="root"
-				style={{
-					flexGrow: 1,
-					backgroundColor: theme.palette.primary.dark,
-					minHeight: "100vh",
-				}}
-			>
-				<Header />
-				<main>
-					<Page />
-				</main>
-			</div>
-		</ThemeProvider>
+			<ThemeProvider theme={theme}>
+				<div
+					className="root"
+					style={{
+						flexGrow: 1,
+						backgroundColor: theme.palette.primary.dark,
+						minHeight: "100vh",
+					}}
+				>
+					<Header />
+					<main>
+						<Page />
+					</main>
+				</div>
+			</ThemeProvider>
 	);
 }
 

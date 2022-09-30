@@ -22,7 +22,7 @@ export const addDownVote = ({ downvotes, id, type }) => ({
 });
 
 export const changeFavorite = ({ favourite, id }) => ({
-	type: "CHANGE_FAVORITE",
+	type: "CHANGE_FAVOURITE",
 	payload: {
 		favourite: !favourite,
 		id,
