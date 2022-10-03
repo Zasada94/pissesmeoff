@@ -10,14 +10,18 @@ import {
 	IconButton,
 	Typography,
 } from "@mui/material";
-import { ThumbUpRounded, ThumbDownRounded, FavoriteRounded } from "@mui/icons-material";
+import {
+	ThumbUpRounded,
+	ThumbDownRounded,
+	FavoriteRounded,
+} from "@mui/icons-material";
 
 function Post({ title, text, upvotes, downvotes, id, favourite }) {
 	const dispatch = useDispatch();
 	return (
-		<Card>
+		<Card sx={{ overflow: "visible" }}>
 			<CardHeader title={title} />
-			<Divider/>
+			<Divider />
 			<CardContent>
 				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
 					{text}
@@ -37,7 +41,7 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 				>
 					<ThumbUpRounded
 						sx={{
-							'& .b': {
+							"& .b": {
 								fontSize: 20,
 								paddingLeft: 10,
 							},
@@ -52,8 +56,7 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 						dispatch(changeFavorite({ favourite, id }));
 					}}
 				>
-					<FavoriteRounded
-					/>
+					<FavoriteRounded />
 				</IconButton>
 
 				<IconButton
