@@ -128,6 +128,8 @@ const Header = () => {
 									color: "inherit",
 									display: "block",
 									lineHeight: 1,
+									textAlign: "center",
+									minWidth: "auto",
 								}}
 								component={Link}
 								to={`/${page}`}
