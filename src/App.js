@@ -1,5 +1,3 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
 import Page from "./components/Page";
@@ -18,7 +16,7 @@ const theme = createTheme(
 			mode: "dark",
 			primary: {
 				light: "#e7f5f0",
-				middle: "#e7f5f0",
+				middle: "",
 				main: "#0095b6",
 				dark: "#232b2b",
 			},

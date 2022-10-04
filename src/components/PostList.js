@@ -19,7 +19,15 @@ function PostList({ array }) {
 	return (
 		<>
 			<ScrollToTopOnMount />
-			<List>{postElement(array)}</List>
+			<List
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+				}}
+			>
+				{postElement(array)}
+			</List>
 		</>
 	);
 }

@@ -15,18 +15,33 @@ import {
 	ThumbDownRounded,
 	FavoriteRounded,
 } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
 function Post({ title, text, upvotes, downvotes, id, favourite }) {
+	const theme = useTheme();
 	const dispatch = useDispatch();
 	return (
-		<Card sx={{ overflow: "visible" }}>
+		<Card
+			sx={{
+				overflow: "visible",
+				backgroundColor: "black",
+				color: theme.palette.secondary.light,
+				maxWidth: "1000px",
+				marginBottom: "20px",
+			}}
+		>
 			<CardHeader title={title} />
-			<Divider />
+			<Divider variant="middle" sx={{ backgroundColor: "#414141" }} />
 			<CardContent>
-				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+				<Typography
+					sx={{ fontSize: 14, color: theme.palette.primary.light }}
+					color="text.secondary"
+					gutterBottom
+				>
 					{text}
 				</Typography>
 			</CardContent>
+			<Divider variant="middle" sx={{ backgroundColor: "#414141" }} />
 			<CardActions
 				sx={{
 					justifyContent: "space-evenly",
