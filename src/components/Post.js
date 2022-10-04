@@ -27,7 +27,9 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 				backgroundColor: "black",
 				color: theme.palette.secondary.light,
 				maxWidth: "1000px",
+				width: "95%",
 				marginBottom: "20px",
+				
 			}}
 		>
 			<CardHeader title={title} />
@@ -45,8 +47,8 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 			<CardActions
 				sx={{
 					justifyContent: "space-evenly",
-					marginTop: 5,
-					marginBottom: 5,
+					marginTop: 0.1,
+					marginBottom: 0.1,
 				}}
 			>
 				<IconButton

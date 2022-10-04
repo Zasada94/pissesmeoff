@@ -14,16 +14,19 @@ function HomePage() {
 				alignItems: "center",
 				color: theme.palette.primary.light,
 				overflow: "hidden",
+				marginBottom: "0px",
 			}}
 		>
 			<Typography
 				variant="subtitle2"
 				sx={{
 					my: 0.5,
+
 					fontFamily: "League Spartan",
 					fontWeight: "500",
+					fontSize: "1rem",
 					[theme.breakpoints.up("md")]: {
-						fontSize: "1.2rem",
+						fontSize: "1.3rem",
 					},
 				}}
 			>
@@ -35,11 +38,12 @@ function HomePage() {
 			<Typography
 				variant="subtitle2"
 				sx={{
-					my: 1,
+					my: 0.5,
 					fontFamily: "League Spartan",
 					fontWeight: "500",
+					fontSize: "1rem",
 					[theme.breakpoints.up("md")]: {
-						fontSize: "1.2rem",
+						fontSize: "1.3rem",
 					},
 				}}
 			>

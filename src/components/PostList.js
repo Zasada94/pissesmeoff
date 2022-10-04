@@ -24,6 +24,7 @@ function PostList({ array }) {
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
+					paddingTop: "0px",
 				}}
 			>
 				{postElement(array)}
