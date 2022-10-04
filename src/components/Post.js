@@ -28,6 +28,15 @@ function Post({ title, text, upvotes, id, favourite }) {
 	const handleLike = () => {
 		setLike(!like);
 	};
+
+	const checkIfMoreThan1 = () => {
+		if ({ upvotes } === 1) {
+			return "It pisses off only author";
+		} else {
+			return `It pisses off ${upvotes} people`;
+		}
+	};
+
 	return (
 		<Card
 			sx={{
@@ -65,7 +74,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 				}}
 			>
 				<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
-					It pisses off: {upvotes} people
+					{checkIfMoreThan1()}
 				</Typography>
 				<IconButton
 					aria-label="add up vote"
@@ -77,16 +86,14 @@ function Post({ title, text, upvotes, id, favourite }) {
 						color: like
 							? theme.palette.secondary.light
 							: theme.palette.secondary.light,
-						opacity: like ? "1" : "0.5",
+						opacity: like ? "1" : "0.7",
 					}}
 				>
 					<ThumbDownRounded
 						sx={{
 							fontSize: 18,
 							padding: "0 5px 0 5px",
-							color: like
-								? theme.palette.primary.light
-								: theme.palette.secondary.light,
+							color: like ? "#414141" : theme.palette.secondary.light,
 						}}
 					/>
 					<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
@@ -106,7 +113,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 						sx={{
 							fontSize: 18,
 							padding: "0 5px 0 5px",
-							color: fav ? theme.palette.primary.light : "#de0000",
+							color: fav ? "	#414141" : "#de0000",
 						}}
 					/>
 					<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
