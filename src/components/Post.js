@@ -5,21 +5,29 @@ import {
 	Card,
 	CardActions,
 	CardContent,
-	CardHeader,
 	Divider,
 	IconButton,
 	Typography,
 } from "@mui/material";
 import {
-	ThumbUpRounded,
 	ThumbDownRounded,
 	FavoriteRounded,
+	Brightness1,
 } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 
-function Post({ title, text, upvotes, downvotes, id, favourite }) {
+function Post({ title, text, upvotes, id, favourite }) {
 	const theme = useTheme();
 	const dispatch = useDispatch();
+	const [fav, setFav] = React.useState(true);
+	const [like, setLike] = React.useState(true);
+
+	const handleFav = () => {
+		setFav(!fav);
+	};
+	const handleLike = () => {
+		setLike(!like);
+	};
 	return (
 		<Card
 			sx={{
@@ -30,7 +38,6 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 				width: "95%",
 				marginBottom: "20px",
 				borderRadius: "8px",
-				fontSize: 10,
 			}}
 		>
 			<Typography
@@ -57,40 +64,54 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 					marginBottom: 0.1,
 				}}
 			>
+				<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
+					It pisses off: {upvotes} people
+				</Typography>
 				<IconButton
 					aria-label="add up vote"
-					color="primary"
-					onClick={() => dispatch(addUpVote({ upvotes, id, type: "upvotes" }))}
+					onClick={() => {
+						handleLike();
+						dispatch(addUpVote({ upvotes, id, type: "upvotes" }));
+					}}
+					sx={{
+						color: like
+							? theme.palette.secondary.light
+							: theme.palette.secondary.light,
+						opacity: like ? "1" : "0.5",
+					}}
 				>
-					<ThumbUpRounded
+					<ThumbDownRounded
 						sx={{
-							"& .b": {
-								fontSize: 20,
-								paddingLeft: 10,
-							},
+							fontSize: 18,
+							padding: "0 5px 0 5px",
+							color: like
+								? theme.palette.primary.light
+								: theme.palette.secondary.light,
 						}}
 					/>
-					<b>{upvotes}</b>
+					<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
+						Pisses me off too
+					</Typography>
 				</IconButton>
 
 				<IconButton
 					aria-label="favorites"
 					onClick={() => {
+						handleFav();
 						dispatch(changeFavorite({ favourite, id }));
 					}}
+					sx={{ color: fav ? theme.palette.secondary.light : "#de0000" }}
 				>
-					<FavoriteRounded />
-				</IconButton>
-
-				<IconButton
-					aria-label="add down vote"
-					color="secondary"
-					onClick={() =>
-						dispatch(addDownVote({ downvotes, id, type: "downvotes" }))
-					}
-				>
-					<ThumbDownRounded />
-					<b>{downvotes}</b>
+					<FavoriteRounded
+						sx={{
+							fontSize: 18,
+							padding: "0 5px 0 5px",
+							color: fav ? theme.palette.primary.light : "#de0000",
+						}}
+					/>
+					<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
+						Add favourite
+					</Typography>
 				</IconButton>
 			</CardActions>
 		</Card>
