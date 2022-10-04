@@ -29,15 +29,21 @@ function Post({ title, text, upvotes, downvotes, id, favourite }) {
 				maxWidth: "1000px",
 				width: "95%",
 				marginBottom: "20px",
-				
+				borderRadius: "8px",
+				fontSize: 10,
 			}}
 		>
-			<CardHeader title={title} />
+			<Typography
+				variant="h6"
+				component="div"
+				sx={{ margin: "5px 0 5px 20px" }}
+			>
+				{title}
+			</Typography>
 			<Divider variant="middle" sx={{ backgroundColor: "#414141" }} />
 			<CardContent>
 				<Typography
-					sx={{ fontSize: 14, color: theme.palette.primary.light }}
-					color="text.secondary"
+					sx={{ fontSize: 13, color: theme.palette.primary.light }}
 					gutterBottom
 				>
 					{text}
