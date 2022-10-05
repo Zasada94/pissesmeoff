@@ -1,9 +1,4 @@
-import {
-	ADD_UP_VOTE,
-	CHANGE_FAVOURITE,
-	ADD_DOWN_VOTE,
-	ADD_POST,
-} from "./actions";
+import { ADD_UP_VOTE, CHANGE_FAVOURITE, ADD_POST } from "./actions";
 import { posts } from "./states";
 
 const updatePost = (array, action, value) =>
@@ -16,12 +11,7 @@ const updatePost = (array, action, value) =>
 
 function transferPost(fromArr, toArr, action) {
 	fromArr.map((post, index) => {
-		if (
-			(action.payload.type === "upvotes" &&
-				post.upvotes - post.downvotes > 5) ||
-			(action.payload.type === "downvotes" &&
-				post.upvotes - post.downvotes <= 5)
-		) {
+		if (action.payload.type === "upvotes" && post.upvotes > 5) {
 			const deleteElement = fromArr.splice(index, 1);
 			toArr.push(deleteElement[0]);
 		}
@@ -35,19 +25,13 @@ export function reducer(prevState = { posts }, action) {
 
 	switch (action.type) {
 		case ADD_UP_VOTE: {
-			const hot = updatePost(prevHot, action, "downvotes");
-			const regular = updatePost(prevRegular, action, "downvotes");
+			const hot = updatePost(prevHot, action, "upvotes");
+			const regular = updatePost(prevRegular, action, "upvotes");
 
 			transferPost(hot, regular, action);
 			return { posts: { hot, regular } };
 		}
-		case ADD_DOWN_VOTE: {
-			const hot = updatePost(prevHot, action, "upvotes");
-			const regular = updatePost(prevRegular, action, "upvotes");
 
-			transferPost(regular, hot, action);
-			return { posts: { hot, regular } };
-		}
 		case CHANGE_FAVOURITE: {
 			const hot = updatePost(prevHot, action, "favourite");
 			const regular = updatePost(prevRegular, action, "favourite");

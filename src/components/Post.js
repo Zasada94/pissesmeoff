@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addUpVote, addDownVote, changeFavorite } from "../redux/actions";
+import { addUpVote, changeFavorite } from "../redux/actions";
 import React from "react";
 import {
 	Card,
@@ -9,11 +9,7 @@ import {
 	IconButton,
 	Typography,
 } from "@mui/material";
-import {
-	ThumbDownRounded,
-	FavoriteRounded,
-	Brightness1,
-} from "@mui/icons-material";
+import { ThumbDownRounded, FavoriteRounded } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 
 function Post({ title, text, upvotes, id, favourite }) {
@@ -102,7 +98,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 				</IconButton>
 
 				<IconButton
-					aria-label="favorites"
+					aria-label="favourites"
 					onClick={() => {
 						handleFav();
 						dispatch(changeFavorite({ favourite, id }));
