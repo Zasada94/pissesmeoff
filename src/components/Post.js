@@ -15,14 +15,11 @@ import { useTheme } from "@mui/material/styles";
 function Post({ title, text, upvotes, id, favourite }) {
 	const theme = useTheme();
 	const dispatch = useDispatch();
-	const [fav, setFav] = React.useState(true);
+
 	const [like, setLike] = React.useState(true);
 
-	const handleFav = () => {
-		setFav(!fav);
-	};
 	const handleLike = () => {
-		setLike(!like);
+		setLike(false);
 	};
 
 	const checkIfMoreThan1 = () => {
@@ -36,7 +33,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 	return (
 		<Card
 			sx={{
-				overflow: "visible",
+				overflow: "hidden",
 				backgroundColor: "black",
 				color: theme.palette.secondary.light,
 				maxWidth: "1000px",
@@ -48,7 +45,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 			<Typography
 				variant="h6"
 				component="div"
-				sx={{ margin: "5px 0 5px 20px" }}
+				sx={{ margin: "15px 0 10px 20px" }}
 			>
 				{title}
 			</Typography>
@@ -67,9 +64,14 @@ function Post({ title, text, upvotes, id, favourite }) {
 					justifyContent: "space-evenly",
 					marginTop: 0.1,
 					marginBottom: 0.1,
+					flexWrap: "wrap",
 				}}
 			>
-				<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
+				<Typography
+					variant="h6"
+					component="div"
+					sx={{ fontSize: 14, padding: "8px" }}
+				>
 					{checkIfMoreThan1()}
 				</Typography>
 				<IconButton
@@ -105,12 +107,14 @@ function Post({ title, text, upvotes, id, favourite }) {
 					sx={{
 						color:
 							favourite === false ? theme.palette.secondary.light : "#de0000",
+						minWidth: "22%",
+						marginLeft: "0px!important",
 					}}
 				>
 					<FavoriteRounded
 						sx={{
 							fontSize: 18,
-							padding: "0 5px 0 5px",
+							padding: "0 5px 0 0",
 							color: favourite === false ? "	#414141" : "#de0000",
 						}}
 					/>
