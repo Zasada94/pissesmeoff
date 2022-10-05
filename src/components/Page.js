@@ -21,7 +21,8 @@ function Page() {
 					path="/"
 					element={
 						<>
-							<HomePage />,<PostList array={regular} />
+							<HomePage />
+							<PostList array={regular} />
 						</>
 					}
 				></Route>
@@ -29,7 +30,8 @@ function Page() {
 					path="/pissesmeoff"
 					element={
 						<>
-							<HomePage />,<PostList array={regular} />
+							<HomePage />
+							<PostList array={regular} />
 						</>
 					}
 				></Route>
@@ -37,7 +39,8 @@ function Page() {
 					path="/regular"
 					element={
 						<>
-							<HomePage />,<PostList array={regular} />
+							<HomePage />
+							<PostList array={regular} />
 						</>
 					}
 				></Route>
@@ -45,7 +48,8 @@ function Page() {
 					path="/hot"
 					element={
 						<>
-							<HomePage />,<PostList array={hot} />
+							<HomePage />
+							<PostList array={hot} />
 						</>
 					}
 				></Route>
@@ -53,7 +57,8 @@ function Page() {
 					path="/favourites"
 					element={
 						<>
-							<HomePage />,<PostList array={favourites} />
+							<HomePage />
+							<PostList array={favourites} />
 						</>
 					}
 				></Route>

@@ -28,7 +28,7 @@ export function reducer(prevState = { posts }, action) {
 			const hot = updatePost(prevHot, action, "upvotes");
 			const regular = updatePost(prevRegular, action, "upvotes");
 
-			transferPost(hot, regular, action);
+			transferPost(regular, hot, action);
 			return { posts: { hot, regular } };
 		}
 
