@@ -11,7 +11,7 @@ export const addUpVote = ({ upvotes, id, type }) => ({
 	},
 });
 
-export const changeFavorite = ({ favourite, id }) => ({
+export const changeFavourite = ({ favourite, id }) => ({
 	type: "CHANGE_FAVOURITE",
 	payload: {
 		favourite: !favourite,

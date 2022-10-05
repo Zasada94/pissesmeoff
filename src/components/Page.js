@@ -11,7 +11,7 @@ function Page() {
 	const regular = useSelector((state) => state.posts.regular);
 	const favourites = useSelector((state) =>
 		[...state.posts.regular, ...state.posts.hot].filter(
-			(post) => post.favourites
+			(post) => post.favourite
 		)
 	);
 	return (

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addUpVote, changeFavorite } from "../redux/actions";
+import { addUpVote, changeFavourite } from "../redux/actions";
 import React from "react";
 import {
 	Card,
@@ -100,20 +100,22 @@ function Post({ title, text, upvotes, id, favourite }) {
 				<IconButton
 					aria-label="favourites"
 					onClick={() => {
-						handleFav();
-						dispatch(changeFavorite({ favourite, id }));
+						dispatch(changeFavourite({ favourite, id }));
 					}}
-					sx={{ color: fav ? theme.palette.secondary.light : "#de0000" }}
+					sx={{
+						color:
+							favourite === false ? theme.palette.secondary.light : "#de0000",
+					}}
 				>
 					<FavoriteRounded
 						sx={{
 							fontSize: 18,
 							padding: "0 5px 0 5px",
-							color: fav ? "	#414141" : "#de0000",
+							color: favourite === false ? "	#414141" : "#de0000",
 						}}
 					/>
 					<Typography variant="h6" component="div" sx={{ fontSize: 14 }}>
-						Add favourite
+						Favourite
 					</Typography>
 				</IconButton>
 			</CardActions>
