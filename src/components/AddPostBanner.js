@@ -2,7 +2,7 @@ import { Container, Typography } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 
-function HomePage() {
+function AddPostBanner() {
 	const theme = useTheme();
 	return (
 		<Container
@@ -30,9 +30,9 @@ function HomePage() {
 					},
 				}}
 			>
-				Are You pissed off by{" "}
+				That is a tragedy.{" "}
 				<span style={{ color: theme.palette.secondary.light }}>
-					school? work? politics? ex-wife? neighbour? paycheck?{" "}
+					What the hell is going on?!{" "}
 				</span>
 			</Typography>
 			<Typography
@@ -47,12 +47,15 @@ function HomePage() {
 					},
 				}}
 			>
-				Or maybe just everything enrages You?
-				<span style={{ color: theme.palette.secondary.light }}> Share it </span>
-				here, anonymously!
+				Write down what
+				<span style={{ color: theme.palette.secondary.light }}>
+					{" "}
+					pisses You off,{" "}
+				</span>
+				God damn it.
 			</Typography>
 		</Container>
 	);
 }
 
-export default HomePage;
+export default AddPostBanner;

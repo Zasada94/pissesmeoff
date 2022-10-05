@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import Container from "@mui/material/Container";
 import PostList from "./PostList";
 import AddPost from "./AddPost";
-import HomePage from "./HomePage";
+import AddPostBanner from "./AddPostBanner";
+import HomeBanner from "./HomeBanner";
 
 function Page() {
 	const hot = useSelector((state) => state.posts.hot);
@@ -21,7 +22,7 @@ function Page() {
 					path="/"
 					element={
 						<>
-							<HomePage />
+							<HomeBanner />
 							<PostList array={regular} />
 						</>
 					}
@@ -30,7 +31,7 @@ function Page() {
 					path="/pissesmeoff"
 					element={
 						<>
-							<HomePage />
+							<HomeBanner />
 							<PostList array={regular} />
 						</>
 					}
@@ -39,7 +40,7 @@ function Page() {
 					path="/regular"
 					element={
 						<>
-							<HomePage />
+							<HomeBanner />
 							<PostList array={regular} />
 						</>
 					}
@@ -48,7 +49,7 @@ function Page() {
 					path="/hot"
 					element={
 						<>
-							<HomePage />
+							<HomeBanner />
 							<PostList array={hot} />
 						</>
 					}
@@ -57,12 +58,20 @@ function Page() {
 					path="/favourites"
 					element={
 						<>
-							<HomePage />
+							<HomeBanner />
 							<PostList array={favourites} />
 						</>
 					}
 				></Route>
-				<Route path="/add_post" element={<AddPost />}></Route>
+				<Route
+					path="/add"
+					element={
+						<>
+							<AddPostBanner />
+							<AddPost />
+						</>
+					}
+				></Route>
 				<Route path="*" element={<Navigate to="/" replace />}></Route>
 			</Routes>
 		</Container>

@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import SurfingIcon from "@mui/icons-material/Surfing";
 import { useTheme } from "@mui/material/styles";
 
-const pages = ["regular", "hot", "favourites", "add_post"];
+const pages = ["regular", "hot", "favourites", "add"];
 
 const Header = () => {
 	const theme = useTheme();
