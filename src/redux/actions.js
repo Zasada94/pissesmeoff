@@ -19,7 +19,7 @@ export const changeFavourite = ({ favourite, id }) => ({
 	},
 });
 
-export const addMeme = ({ title, author, text }) => ({
+export const addPost = ({ title, author, text }) => ({
 	type: "ADD_POST",
 	payload: {
 		title,
