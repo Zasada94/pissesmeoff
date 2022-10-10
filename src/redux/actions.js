@@ -19,13 +19,11 @@ export const changeFavourite = ({ favourite, id }) => ({
 	},
 });
 
-export const addPost = ({ title, author, text }) => ({
+export const addPost = ({ title, text }) => ({
 	type: "ADD_POST",
 	payload: {
 		title,
-		author,
 		upvotes: 0,
-		downvotes: 0,
 		favourite: false,
 		text,
 	},

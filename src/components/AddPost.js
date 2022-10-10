@@ -1,22 +1,25 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Alert, Box, Card, InputLabel, TextField } from "@mui/material";
+import {
+	Alert,
+	Box,
+	Button,
+	Card,
+	InputLabel,
+	Snackbar,
+	TextField,
+	Typography,
+} from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
-
 import { addPost } from "../redux/actions";
 
 const defaultValues = {
 	title: "",
-	author: "",
-	img: "",
+	text: "",
 };
 
-function Info(props) {
-	return <Alert elevation={6} severity="info" variant="filled" {...props} />;
-}
-
-function AddPost() {
+const AddPost = () => {
 	const dispatch = useDispatch();
 	const [message, setMessage] = useState("");
 	const { control, handleSubmit, reset } = useForm({ defaultValues });
@@ -25,12 +28,12 @@ function AddPost() {
 		{
 			nameField: "Title*",
 			id: "title",
-			halperText: "Title for what pisses You off",
+			helperText: "Title for what pisses You off",
 		},
 		{
 			nameField: "Text*",
 			id: "text",
-			halperText: "Write down what pisses You off:",
+			helperText: "Write down what pisses You off",
 		},
 	];
 
@@ -40,15 +43,16 @@ function AddPost() {
 			<Controller
 				name={id}
 				control={control}
-				rules={{ required: true }}
 				render={({ field: { onChange, value } }) => (
 					<TextField
 						fullWidth
 						id={id}
+						required
 						variant="outlined"
 						helperText={helperText}
 						value={value}
 						onChange={onChange}
+						sx={{ marginBottom: "25px" }}
 					/>
 				)}
 			/>
@@ -69,7 +73,14 @@ function AddPost() {
 	};
 
 	return (
-		<Card>
+		<Card
+			sx={{
+				maxWidth: 600,
+				marginTop: 10,
+				display: "flex",
+				flexDirection: "column",
+			}}
+		>
 			<Typography
 				variant="h6"
 				component="div"
@@ -77,11 +88,37 @@ function AddPost() {
 			>
 				Add post
 			</Typography>
-			<form onSubmit={handleSumbit(onSubmit)}>
-				
+			<form onSubmit={handleSubmit(onSubmit)} style={{ padding: 20 }}>
+				{formField}
+				<Box>
+					<Button
+						type="submit"
+						variant="cotained"
+						color="primary"
+						fullWidth
+						sx={{ marginBottom: 20 }}
+					>
+						submit
+					</Button>
+					<Button
+						type="reset"
+						variant="contained"
+						fullWidth
+						onClick={() => reset()}
+					>
+						reset form
+					</Button>
+				</Box>
 			</form>
+			{message ? (
+				<Snackbar open autoHideDuration={3000} onClose={handleClose}>
+					<Alert onClose={handleClose} severity="success">
+						{message}
+					</Alert>
+				</Snackbar>
+			) : null}
 		</Card>
 	);
-}
+};
 
 export default AddPost;

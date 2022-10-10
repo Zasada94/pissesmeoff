@@ -19,7 +19,7 @@ function transferPost(fromArr, toArr, action) {
 	});
 }
 
-export function reducer(prevState = { posts }, action) {
+export const reducer = (prevState = { posts }, action) => {
 	const prevHot = [...prevState.posts.hot];
 	const prevRegular = [...prevState.posts.regular];
 
@@ -42,11 +42,11 @@ export function reducer(prevState = { posts }, action) {
 			const id =
 				[...prevState.posts.hot, ...prevState.posts.regular].length + 1;
 			const post = { id, ...action.payload };
-			const hot = [prevHot];
-			const regular = [prevRegular];
+			const hot = [...prevHot];
+			const regular = [...prevRegular, post];
 			return { posts: { hot, regular } };
 		}
 		default:
 			return prevState;
 	}
-}
+};
