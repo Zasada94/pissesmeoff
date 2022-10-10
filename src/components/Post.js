@@ -23,7 +23,7 @@ function Post({ title, text, upvotes, id, favourite }) {
 	};
 
 	const checkIfMoreThan1 = () => {
-		if ({ upvotes } === 1) {
+		if ({ upvotes } <= "1") {
 			return "It pisses off only author";
 		} else {
 			return `It pisses off ${upvotes} people`;
