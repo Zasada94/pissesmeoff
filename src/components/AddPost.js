@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { addPost } from "../redux/actions";
+import { useTheme } from "@mui/material/styles";
 
 const defaultValues = {
 	title: "",
@@ -24,22 +25,31 @@ const AddPost = () => {
 	const [message, setMessage] = useState("");
 	const { control, handleSubmit, reset } = useForm({ defaultValues });
 
+	const theme = useTheme();
+
 	const fields = [
 		{
-			nameField: "Title*",
+			nameField: "Post title*",
 			id: "title",
-			helperText: "Title for what pisses You off",
+			helperText: "Title for what pisses You off:",
 		},
 		{
-			nameField: "Text*",
+			nameField: "Comment content*",
 			id: "text",
-			helperText: "Write down what pisses You off",
+			helperText: "Write down what pisses You off:",
 		},
 	];
 
 	const formField = fields.map(({ nameField, id, helperText }) => (
 		<Box key={id}>
-			<InputLabel htmlFor={id}>{nameField}</InputLabel>
+			<InputLabel
+				htmlFor={id}
+				sx={{
+					color: "white",
+				}}
+			>
+				{nameField}
+			</InputLabel>
 			<Controller
 				name={id}
 				control={control}
@@ -49,10 +59,20 @@ const AddPost = () => {
 						id={id}
 						required
 						variant="outlined"
-						helperText={helperText}
+						placeholder={helperText}
 						value={value}
 						onChange={onChange}
-						sx={{ marginBottom: "25px" }}
+						color="secondary"
+						sx={{
+							marginBottom: "25px",
+							"& ::placeholder": {
+								color: "primary.light",
+								fontSize: "12px",
+							},
+							"& input": {
+								color: "primary.light",
+							},
+						}}
 					/>
 				)}
 			/>
@@ -76,25 +96,22 @@ const AddPost = () => {
 		<Card
 			sx={{
 				maxWidth: 600,
-				marginTop: 10,
+				margin: "10px auto",
 				display: "flex",
 				flexDirection: "column",
+				backgroundColor: "black",
+				color: "primary.light",
 			}}
 		>
-			<Typography
-				variant="h6"
-				component="div"
-				sx={{ margin: "15px 0 10px 20px" }}
-			>
-				Add post
+			<Typography variant="h6" component="div" sx={{ margin: "10px auto" }}>
+				ADD POST
 			</Typography>
 			<form onSubmit={handleSubmit(onSubmit)} style={{ padding: 20 }}>
 				{formField}
 				<Box>
 					<Button
 						type="submit"
-						variant="cotained"
-						color="primary"
+						variant="contained"
 						fullWidth
 						sx={{ marginBottom: 20 }}
 					>

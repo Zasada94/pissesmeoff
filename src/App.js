@@ -17,11 +17,11 @@ const theme = createTheme(
 			primary: {
 				light: "#e7f5f0",
 				middle: "",
-				main: "#0095b6",
+				main: "#383838",
 				dark: "#232b2b",
 			},
 			secondary: {
-				main: "#FF6347",
+				main: "#cc3300",
 				light: "#cc3300",
 			},
 		},
@@ -33,21 +33,21 @@ const theme = createTheme(
 
 function App() {
 	return (
-			<ThemeProvider theme={theme}>
-				<div
-					className="root"
-					style={{
-						flexGrow: 1,
-						backgroundColor: theme.palette.primary.dark,
-						minHeight: "100vh",
-					}}
-				>
-					<Header />
-					<main>
-						<Page />
-					</main>
-				</div>
-			</ThemeProvider>
+		<ThemeProvider theme={theme}>
+			<div
+				className="root"
+				style={{
+					flexGrow: 1,
+					backgroundColor: theme.palette.primary.dark,
+					minHeight: "100vh",
+				}}
+			>
+				<Header />
+				<main>
+					<Page />
+				</main>
+			</div>
+		</ThemeProvider>
 	);
 }
 

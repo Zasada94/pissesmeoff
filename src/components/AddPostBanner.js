@@ -25,6 +25,7 @@ function AddPostBanner() {
 					fontFamily: "League Spartan",
 					fontWeight: "500",
 					fontSize: "1rem",
+					textAlign: "center",
 					[theme.breakpoints.up("md")]: {
 						fontSize: "1.3rem",
 					},
@@ -42,6 +43,7 @@ function AddPostBanner() {
 					fontFamily: "League Spartan",
 					fontWeight: "500",
 					fontSize: "1rem",
+					textAlign: "center",
 					[theme.breakpoints.up("md")]: {
 						fontSize: "1.3rem",
 					},
