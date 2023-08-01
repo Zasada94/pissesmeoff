@@ -25,11 +25,11 @@ In project You are able to:
 
 
 ## Screens  
-![Screenshot](./assets/screenshots/1.png)
+![Screenshot](./assets/screenshots/1.jpg)
 
-![Screenshot](./assets/screenshots/2.png)
+![Screenshot](./assets/screenshots/2.jpg)
 
-![Screenshot](./assets/screenshots/3.png)
+![Screenshot](./assets/screenshots/3.jpg)
 
 
 ## Live
