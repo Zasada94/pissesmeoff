@@ -25,7 +25,11 @@ In project You are able to:
 
 
 ## Screens  
-![Screenshot](./screenshots/1.png)
+![Screenshot](./assets/screenshots/1.png)
+
+![Screenshot](./assets/screenshots/2.png)
+
+![Screenshot](./assets/screenshots/3.png)
 
 
 ## Live
